@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.core.urlresolvers import reverse_lazy
 
 from .utils import code_generator, create_shortcode
 
@@ -9,21 +10,10 @@ class MyShortURLManager(models.Manager):
     def all(self, *args, **kwargs):
         qs_main = super(MyShortURLManager, self).all(*args, **kwargs)
         qs = qs_main.filter(active=True)
-        return qs
-
-    def refrush_shortcode(self):
-        qs = MyShortURL.objects.filter(id__gte=1)
-        cnt = 0
-        for q in qs:
-            q.shortcode = create_shortcode()
-            q.save()
-            cnt += 1
-        return "New codes made: {}".format(cnt)
-
-    
+        return qs    
 
 class MyShortURL(models.Model):
-    url = models.CharField(max_length=255, )
+    url = models.URLField(max_length=255)
     shortcode = models.CharField(max_length=SHORTCODE_MAX, unique=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

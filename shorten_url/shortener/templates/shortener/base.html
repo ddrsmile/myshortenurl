@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Joey LIU | SHORTEN URL</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" type="text/css" href="{% static 'shortener/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'shortener/css/base.css' %}">
+        <body>
+            <img id="bkgd" src={% static 'shortener/img/background.png' %}>
+            {% block content %}{% endblock %}
+            <footer>
+                <div class="poweredby container" align="middle">
+                    <ul class="clearfix">
+                        <a href="https://github.com/ddrsmile/myshortenurl">
+                                <img src={% static 'shortener/img/GitHub-Mark-32px.png' %}>
+                            </a>
+                        <li>
+                            <a href="http://www.freepik.com/free-photos-vectors/background" title="Background vector designed by Harryarts - Freepik.com">
+                                <img src={% static 'shortener/img/freepik.png' %}>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.udemy.com/try-django-1-10/learn/v4/overview" title="Try Django 1.10 | Create a URL Shortening Service">
+                                <img src={% static 'shortener/img/udemy.png' %}>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.djangoproject.com/" title="django">
+                                <img src={% static 'shortener/img/django.png' %}>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+            <script type="text/javascript" src="{% static 'shortener/js/jquery-1.12.4.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'shortener/js/bootstrap.min.js' %}"></script>
+            <script>
+                $( function() {
+                    $( document ).tooltip();
+                } );
+                </script>
+                <style>
+                label {
+                    display: inline-block;
+                    width: 5em;
+                }
+            </style>
+        </body>
+    </head>
+</html>

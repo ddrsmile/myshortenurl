@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
@@ -10,18 +11,18 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('shortener', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='MyShortURL',
+            name='ClickEvent',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('url', models.URLField(max_length=255)),
-                ('shortcode', models.CharField(blank=True, max_length=15, unique=True)),
+                ('count', models.IntegerField(default=0)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('active', models.BooleanField(default=True)),
+                ('my_url', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='clickevent', to='shortener.MyShortURL')),
             ],
         ),
     ]

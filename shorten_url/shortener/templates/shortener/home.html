@@ -1,0 +1,20 @@
+{% extends "./base.html" %}
+
+{% block content %}
+<div class="outter">
+    <div class="middle">
+        <div class="logo-name"><a href="/"><h1>Joey Liu | SHORTEN URL</h1></a></div>
+        <div class="inner">
+            <form id="main" method='POST' class="clearfix" action='.'>
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <button class="btn btn-custom" type='submit'>SHORTEN</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
