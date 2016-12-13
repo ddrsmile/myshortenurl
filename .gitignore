@@ -6,6 +6,6 @@ __pycache__/
 *.sock
 *SECRET_KEY*
 dev.py
-joeyliu/static/*
-joeyliu/media/*
+shorten_url/static/*
+shorten_url/media/*
 .vscode/

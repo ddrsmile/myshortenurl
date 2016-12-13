@@ -78,13 +78,39 @@ img#bkgd {
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+.has-error {
+    border-color: #a94442 !important;
+    outline: 0 none !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.has-error:focus {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c27c7a !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c27c7a !important;
+}
+.has-success {
+    border-color: #2b542c !important;
+    outline:0 none !important;
+}
+.has-success:focus {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #67b168 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #67b168 !important;
+}
+#main #username,
+#main #password {
+    width: 170px;
+}
 .btn-custom {
-    color: #333;
+    color: #333 !important;
     background-color: #fff;
     border-color: #ccc;
     line-height: 36px;
     padding: 0 12px;
+    width: 100px;
     float: right;
+}
+a.btn-custom {
+    margin-left: 20px;
 }
 .short-url {
     color: #333;
@@ -120,6 +146,6 @@ footer {
     margin: 0 10px;
 }
 .poweredby ul li img {
-    height: 32px;
+    height: 20px;
     width: auto;
 }

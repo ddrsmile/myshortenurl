@@ -16,22 +16,34 @@
             <footer>
                 <div class="poweredby container" align="middle">
                     <ul class="clearfix">
-                        <a href="https://github.com/ddrsmile/myshortenurl">
-                                <img src={% static 'shortener/img/GitHub-Mark-32px.png' %}>
-                            </a>
                         <li>
-                            <a href="http://www.freepik.com/free-photos-vectors/background" title="Background vector designed by Harryarts - Freepik.com">
+                            <a href="https://github.com/ddrsmile/myshortenurl" data-toggle="tooltip" title="Github | My Shorten URL">
+                                <img src={% static 'shortener/img/github.png' %}>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.freepik.com/free-photos-vectors/background" data-toggle="tooltip" title="Background vector designed by Harryarts - Freepik.com">
                                 <img src={% static 'shortener/img/freepik.png' %}>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.udemy.com/try-django-1-10/learn/v4/overview" title="Try Django 1.10 | Create a URL Shortening Service">
+                            <a href="https://www.udemy.com/try-django-1-10/learn/v4/overview" data-toggle="tooltip" title="Try Django 1.10 | Create a URL Shortening Service">
                                 <img src={% static 'shortener/img/udemy.png' %}>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.djangoproject.com/" title="django">
+                            <a href="https://www.djangoproject.com/" data-toggle="tooltip" title="django">
                                 <img src={% static 'shortener/img/django.png' %}>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://getbootstrap.com/" data-toggle="tooltip" title="Bootstrap">
+                                <img src={% static 'shortener/img/bootstrap.png' %}>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://jquery.org/" data-toggle="tooltip" title="jQuery">
+                                <img src={% static 'shortener/img/jquery.png' %}>
                             </a>
                         </li>
                     </ul>
@@ -39,9 +51,14 @@
             </footer>
             <script type="text/javascript" src="{% static 'shortener/js/jquery-1.12.4.min.js' %}"></script>
             <script type="text/javascript" src="{% static 'shortener/js/bootstrap.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'shortener/js/jquery.validate.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'shortener/js/validate.custom.js' %}"></script>
             <script>
                 $( function() {
-                    $( document ).tooltip();
+                    $(document).ready(function(){
+                        $('[data-toggle="tooltip"]').tooltip();
+                        {% block doc_ready %}{% endblock %}
+                    });
                 } );
                 </script>
                 <style>
