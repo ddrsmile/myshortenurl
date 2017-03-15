@@ -6,6 +6,6 @@ __pycache__/
 *.sock
 *SECRET_KEY*
 dev.py
-shorten_url/static/*
-shorten_url/media/*
+src/static/*
+src/media/*
 .vscode/
