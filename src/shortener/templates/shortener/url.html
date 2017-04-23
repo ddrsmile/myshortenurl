@@ -2,24 +2,22 @@
 
 {% block content %}
 <div class="outter">
-    <div class="middle">
-        <div class="logo-name"><a href="/"><h1>Joey Liu | SHORTEN URL</h1></a></div>
-        <div class="inner">
-            <div class="short-url">
-            <p><a href="origin_url">{{ origin_url }}</a></p>
-            <p><a href="{{ short_url }}">{{ short_url }}</a> | <span>access times: {{ click_count }}</span></p>
-            <div>
-            <form id="main" method='POST' class="clearfix" action='.'>
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="form-group">
-                    {{ field }}
-                </div>
-                {% endfor %}
-                <a href="/logout/" class="btn btn-custom">LOGOUT</a>
-                <button class="btn btn-custom" type='submit'>SHORTEN</button>
-            </form>
-        </div>
+    <div class="logo-name"><a href="/"><h1>Joey Liu | SHORTEN URL</h1></a></div>
+    <div class="inner">
+        <div class="short-url">
+        <p><a href="origin_url">{{ origin_url }}</a></p>
+        <p><a href="{{ short_url }}">{{ short_url }}</a> | <span>access times: {{ click_count }}</span></p>
+        <div>
+        <form id="main" method='POST' class="clearfix" action='.'>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                {{ field }}
+            </div>
+            {% endfor %}
+            <a href="/logout/" class="btn btn-custom">LOGOUT</a>
+            <button class="btn btn-custom" type='submit'>SHORTEN</button>
+        </form>
     </div>
 </div>
 {% endblock %}

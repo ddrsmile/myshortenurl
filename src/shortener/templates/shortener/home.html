@@ -2,25 +2,23 @@
 
 {% block content %}
 <div class="outter">
-    <div class="middle">
-        <div class="logo-name"><a href="/"><h1>Joey Liu | SHORTEN URL</h1></a></div>
-        <div class="inner">
-            <form id="main" method='POST' class="clearfix" action='.'>
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="form-group">
-                    {{ field }}
-                </div>
-                {% endfor %}
-                {% if not request.user.is_authenticated %}
-                    <input type="text" id="username" name="username" placeholder="USER NAME" />
-                    <input type="password" id="password" name="password" placeholder="PASSWORD" />
-                {% else %}
-                    <a href="/logout/" class="btn btn-custom btn-logout">LOGOUT</a>
-                {% endif %}
-                <button class="btn btn-custom" type='submit'>SHORTEN</button>
-            </form>
-        </div>
+    <div class="logo-name"><a href="/"><h1>Joey Liu | SHORTEN URL</h1></a></div>
+    <div class="inner">
+        <form id="main" method='POST' class="clearfix" action='.'>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                {{ field }}
+            </div>
+            {% endfor %}
+            {% if not request.user.is_authenticated %}
+                <input type="text" id="username" name="username" placeholder="USER NAME" />
+                <input type="password" id="password" name="password" placeholder="PASSWORD" />
+            {% else %}
+                <a href="/logout/" class="btn btn-custom btn-logout">LOGOUT</a>
+            {% endif %}
+            <button class="btn btn-custom" type='submit'>SHORTEN</button>
+        </form>
     </div>
 </div>
 {% if emsg %}
