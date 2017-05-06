@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME=shorten_url
+NAME=url.joeyliu
 DEPLOYDIR=$( dirname "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )")
 ROOT=$( dirname $DEPLOYDIR)
 DJANGODIR=${ROOT}/src
